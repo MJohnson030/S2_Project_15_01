@@ -13,8 +13,13 @@
 */
 
 window.addEventListener("load", function () {
-    var allSelect = select;
-    for (var i = 0; allSelect.length; i++) {
-
-    };
+    //creates a function inside of the onload form that runs when the javascript is loaded 
+    var allSelect = document.forms.govLinks;
+    //cretes a variable which referneces all nested elements within the govLinks form
+    for (var i = 0; i < allSelect.length; i++) {
+        //loops through allSelect object collection. For each object in the selection list, anonymous function is created.
+        allSelect[i].onchange = function (e) {
+            document.location.href = e.target.value;
+        }
+    }
 });
